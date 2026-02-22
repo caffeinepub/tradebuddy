@@ -1,0 +1,227 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 9,
+  "summary": "Visual prototype for a beginner-friendly trading application with clean modern UI, light/dark mode, simple navigation, and a new animated Welcome screen shown on app launch before the Home Dashboard.",
+  "architectural_notes": [
+    "Use blue/green/white color palette to convey trust, growth, and clarity.",
+    "Support both light and dark themes throughout the UI.",
+    "Prioritize smooth navigation, large touch targets, and beginner-friendly information hierarchy.",
+    "Add an initial Welcome screen as the app entry route; provide a Continue action to navigate into the existing Home Dashboard."
+  ],
+  "known_issues": [
+    "Welcome page not appearing in the draft/build as expected after requesting it (needs verification of screen creation and initial route wiring)."
+  ],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-create-a-clean-modern-beginner-friendly-visual-ui-theme-with-consistent-typography-spacing-and-component-styling-across-the-app-using-a-blue-green-white-palette-and-supporting-both-light-and-dark-mode",
+      "title": "Create a clean, modern, beginner-friendly visual UI theme with consistent typography, spacing, and component styling across the app, using a blue/green/white palette and supporting both light and dark mode.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-smooth-beginner-friendly-navigation-with-large-clearly-labeled-touch-friendly-buttons-to-access-home-dashboard-learning-trading-demo-trading-alerts-live-chart-practice-and-profile-settings",
+      "title": "Implement smooth beginner-friendly navigation with large, clearly labeled touch-friendly buttons to access: Home Dashboard, Learning, Trading, Demo Trading, Alerts, Live Chart Practice, and Profile/Settings.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-home-dashboard-screen-ui-showing-market-overview-summary-cards-trending-stocks-list-key-indices-list-and-a-watchlist-section-use-mock-data-suitable-for-a-visual-prototype",
+      "title": "Build the Home Dashboard screen UI showing: market overview summary cards, trending stocks list, key indices list, and a watchlist section (use mock data suitable for a visual prototype).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-learning-section-screen-ui-with-beginner-lessons-organized-into-categories-e-g-basics-risk-orders-including-lesson-cards-and-at-least-one-video-style-card-layout-use-placeholder-thumbnails-titles",
+      "title": "Build the Learning Section screen UI with beginner lessons organized into categories (e.g., basics, risk, orders), including lesson cards and at least one video-style card layout (use placeholder thumbnails/titles).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-trading-screen-ui-featuring-a-stock-selector-a-chart-area-common-indicators-selection-e-g-ma-rsi-macd-as-ui-toggles-and-prominent-buy-sell-buttons-visual-prototype-behavior-is-sufficient",
+      "title": "Build the Trading Screen UI featuring a stock selector, a chart area, common indicators selection (e.g., MA, RSI, MACD as UI toggles), and prominent Buy/Sell buttons (visual prototype behavior is sufficient).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-demo-trading-page-ui-that-supports-practice-trading-with-virtual-money-show-demo-balance-positions-list-trade-history-and-allow-placing-mock-buy-sell-actions-that-update-local-app-state",
+      "title": "Build the Demo Trading Page UI that supports practice trading with virtual money: show demo balance, positions list, trade history, and allow placing mock buy/sell actions that update local app state.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-alerts-notifications-screen-ui-with-price-alert-list-create-edit-delete-in-prototype-and-an-ai-based-signals-section-using-clearly-labeled-mock-signals-e-g-bullish-momentum-high-volatility-with-explanations",
+      "title": "Build the Alerts & Notifications screen UI with: price alert list (create/edit/delete in prototype), and an 'AI-based signals' section using clearly labeled mock signals (e.g., 'Bullish momentum', 'High volatility') with explanations.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-profile-settings-screen-ui-including-user-account-summary-theme-toggle-preferences-and-a-risk-level-selector-e-g-conservative-moderate-aggressive-with-helper-text-explaining-each",
+      "title": "Build the Profile & Settings screen UI including user account summary, theme toggle, preferences, and a risk level selector (e.g., Conservative/Moderate/Aggressive) with helper text explaining each.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-live-chart-practice-screen-that-simulates-daily-up-down-market-movement-for-practice-using-generated-sample-price-series-no-external-market-data-with-simple-interactions-like-start-pause-speed-and-reset",
+      "title": "Add a Live Chart Practice screen that simulates daily up/down market movement for practice using generated sample price series (no external market data), with simple interactions like start/pause, speed, and reset.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-overall-prototype-feels-fast-and-simple-by-using-loading-skeletons-placeholders-where-appropriate-and-keeping-interactions-responsive-no-blocking-operations-across-all-screens",
+      "title": "Ensure the overall prototype feels fast and simple by using loading skeletons/placeholders where appropriate and keeping interactions responsive (no blocking operations) across all screens.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-app-name-animation-on-the-home-screen-header-so-the-title-tradebuddy-animates-when-the-user-lands-on-the-home-screen-initial-app-load-and-when-navigating-back-to-home-while-keeping-all-existing-home-dashboard-content-market-overview-trending-stocks-indices-watchlist-unchanged",
+      "title": "Add an app-name animation on the Home screen header so the title \"TradeBuddy\" animates when the user lands on the Home screen (initial app load and when navigating back to Home), while keeping all existing Home Dashboard content (market overview, trending stocks, indices, watchlist) unchanged.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-new-welcome-screen-that-is-shown-first-when-the-app-opens-before-the-home-dashboard",
+      "title": "Create a new Welcome screen that is shown first when the app opens (before the Home Dashboard).",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-on-the-welcome-screen-display-the-app-name-text-tradebuddy-with-a-combined-entrance-effect-slide-in-fade-in-finishing-with-a-soft-glowing-text-effect-include-reduced-motion-handling-to-disable-these-animations-when-the-user-prefers-reduced-motion",
+      "title": "On the Welcome screen, display the app name text \"TradeBuddy\" with a combined entrance effect: slide-in + fade-in, finishing with a soft glowing text effect; include reduced-motion handling to disable these animations when the user prefers reduced motion.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-prominent-continue-button-on-the-welcome-screen-that-navigates-the-user-into-the-existing-home-dashboard-screen",
+      "title": "Add a prominent \"Continue\" button on the Welcome screen that navigates the user into the existing Home Dashboard screen.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-persistent-bottom-navigation-is-hidden-on-the-welcome-screen-and-remains-available-on-all-existing-main-screens-home-learn-trade-practice-alerts-live-profile",
+      "title": "Ensure the persistent bottom navigation is hidden on the Welcome screen and remains available on all existing main screens (Home, Learn, Trade, Practice, Alerts, Live, Profile).",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-the-welcome-screen-is-correctly-set-as-the-initial-screen-when-the-app-loads-ensuring-it-appears-before-the-home-dashboard-and-that-the-continue-button-successfully-navigates-to-the-home-dashboard",
+      "title": "Verify the Welcome screen is correctly set as the initial screen when the app loads, ensuring it appears before the Home Dashboard and that the Continue button successfully navigates to the Home Dashboard.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-that-the-app-theme-light-dark-mode-is-working-correctly-with-the-blue-green-white-color-palette-and-consistent-styling-across-all-screens",
+      "title": "Verify that the app theme (light/dark mode) is working correctly with the blue/green/white color palette and consistent styling across all screens.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Design Home Dashboard screen with market overview, trending stocks, indices, and watchlist",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Design Learning Section screen with beginner lessons, trading basics, videos, and tips",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Design Trading Screen with stock charts, indicators, and buy/sell actions",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Design Demo Trading Page with virtual money trading for practice",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Design Alerts & Notifications screen with price alerts and AI-based signals",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Design Profile & Settings screen with account, preferences, and risk level",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add Live Chart practice screen for daily market up/down movement practice",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Implement light and dark mode with a clean, modern, simple UI theme using blue/green/white palette",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Ensure smooth navigation with large buttons and beginner-friendly layout across all screens",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Create a Welcome screen shown on app launch with animated app name (combine fade-in + slide-in + glowing text) and a Continue button that navigates to the Home Dashboard",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-13",
+      "summary": "Ensure all existing screens (Home Dashboard, Learning, Trading, Demo Trading, Alerts, Live Chart Practice, Profile/Settings) are functioning correctly with their mock data and interactive features.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "TradeBuddy",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

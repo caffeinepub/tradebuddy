@@ -1,0 +1,41 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-verify-the-welcome-screen-is-correctly-set-as-the-initial-screen-when-the-app-loads-ensuring-it-appears-before-the-home-dashboard-and-that-the-continue-button-successfully-navigates-to-the-home-dashboard",
+      "featureTitle": "Verify the Welcome screen is correctly set as the initial screen when the app loads, ensuring it appears before the Home Dashboard and that the Continue button successfully navigates to the Home Dashboard.",
+      "files": [
+        "frontend/src/App.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-verify-that-the-app-theme-light-dark-mode-is-working-correctly-with-the-blue-green-white-color-palette-and-consistent-styling-across-all-screens",
+      "featureTitle": "Verify that the app theme (light/dark mode) is working correctly with the blue/green/white color palette and consistent styling across all screens.",
+      "files": [
+        "frontend/src/state/settingsStore.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-18"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

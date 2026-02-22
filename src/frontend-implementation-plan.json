@@ -1,0 +1,116 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Rebuild and deploy existing TradeBuddy app",
+  "requirements": [
+    {
+      "id": "REQ-16",
+      "summary": "Verify the Welcome screen is correctly set as the initial screen when the app loads, ensuring it appears before the Home Dashboard and that the Continue button successfully navigates to the Home Dashboard",
+      "acceptanceCriteria": [
+        "When the app loads, the Welcome screen is displayed first",
+        "The Continue button on the Welcome screen navigates to the Home Dashboard",
+        "Bottom navigation is hidden on the Welcome screen",
+        "Bottom navigation appears on all other main screens (Home, Learn, Trade, Practice, Alerts, Live, Profile)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Review and verify that the screen state initialization correctly sets 'welcome' as the initial screen, and that the screen update function properly handles navigation from Welcome to Home Dashboard. Ensure the conditional rendering logic correctly hides BottomNav when currentScreen is 'welcome' and shows it for all other screens."
+        },
+        {
+          "path": "frontend/src/screens/Welcome.tsx",
+          "operation": "modify",
+          "description": "Review and verify that the Continue button's onClick handler correctly calls onContinue callback to trigger navigation to the Home Dashboard screen."
+        },
+        {
+          "path": "frontend/src/components/nav/BottomNav.tsx",
+          "operation": "modify",
+          "description": "Review and verify that the BottomNav component correctly displays all navigation items (Home, Learn, Trade, Practice, Alerts, Live, Profile) with proper icons and active state highlighting."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Ensure all existing screens are functioning correctly with their mock data and interactive features",
+      "acceptanceCriteria": [
+        "Home Dashboard displays market overview, trending stocks, indices, and watchlist",
+        "Learning screen shows categorized lessons and video tutorials",
+        "Trading screen renders stock selector, chart, and indicators",
+        "Demo Trading page manages virtual positions and trade history",
+        "Alerts screen allows creating, toggling, and deleting price alerts",
+        "Live Chart Practice simulates price movement with playback controls",
+        "Profile/Settings screen allows theme toggle and risk level selection"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/screens/HomeDashboard.tsx",
+          "operation": "modify",
+          "description": "Review and verify that the Home Dashboard correctly imports and displays mock data from frontend/src/lib/mockData/markets.ts, renders market overview cards, trending stocks list, indices section, and watchlist with proper styling and interactivity."
+        },
+        {
+          "path": "frontend/src/screens/Learning.tsx",
+          "operation": "modify",
+          "description": "Review and verify that the Learning screen correctly imports and displays mock lessons, video tutorials, and trading tips from frontend/src/lib/mockData/learning.ts with proper categorization and UI layout."
+        },
+        {
+          "path": "frontend/src/screens/Trading.tsx",
+          "operation": "modify",
+          "description": "Review and verify that the Trading screen correctly displays stock selector, price chart using MockPriceChart component, indicator toggles, and order total calculations using mock data from frontend/src/lib/mockData/trading.ts."
+        },
+        {
+          "path": "frontend/src/screens/DemoTrading.tsx",
+          "operation": "modify",
+          "description": "Review and verify that the Demo Trading screen correctly uses the demoTradingStore from frontend/src/state/demoTradingStore.ts to display virtual balance, open positions, P/L calculations, trade history, and handles buy/sell actions with proper state updates."
+        },
+        {
+          "path": "frontend/src/screens/Alerts.tsx",
+          "operation": "modify",
+          "description": "Review and verify that the Alerts screen correctly uses the alertsStore from frontend/src/state/alertsStore.ts and displays AI signals from frontend/src/lib/mockData/aiSignals.ts, allowing users to create new alerts, toggle existing alerts on/off, and delete alerts with proper state persistence."
+        },
+        {
+          "path": "frontend/src/screens/LiveChartPractice.tsx",
+          "operation": "modify",
+          "description": "Review and verify that the Live Chart Practice screen correctly uses the usePriceSimulation hook from frontend/src/hooks/usePriceSimulation.ts to simulate price movement, displays playback controls (start, pause, reset, speed adjustment), renders the chart with proper updates, and shows learning points."
+        },
+        {
+          "path": "frontend/src/screens/ProfileSettings.tsx",
+          "operation": "modify",
+          "description": "Review and verify that the Profile/Settings screen correctly uses the settingsStore from frontend/src/state/settingsStore.ts to display and update account information, theme preference (light/dark), risk level selection, and notification settings with proper state persistence."
+        }
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "summary": "Verify that the app theme is working correctly with the blue/green/white color palette and consistent styling across all screens",
+      "acceptanceCriteria": [
+        "Light mode uses the defined blue/green/white palette",
+        "Dark mode applies appropriate color adjustments",
+        "Theme toggle in Profile/Settings persists across sessions",
+        "All screens respect the selected theme consistently"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Review and verify that the Tailwind CSS configuration correctly defines OKLCH theme variables for light and dark modes using the blue/green/white color palette, includes proper base styles, and applies dark mode classes correctly."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Review and verify that the Tailwind configuration correctly extends theme colors, defines the darkMode strategy, and includes necessary plugins for consistent theming across the application."
+        },
+        {
+          "path": "frontend/src/state/settingsStore.ts",
+          "operation": "modify",
+          "description": "Review and verify that the settingsStore correctly manages theme state (light/dark), provides a theme toggle function, persists theme preference to localStorage, and applies the theme to the document root element on initialization and changes."
+        },
+        {
+          "path": "frontend/src/screens/ProfileSettings.tsx",
+          "operation": "modify",
+          "description": "Review and verify that the theme toggle UI correctly reads from and updates the settingsStore theme state, displays the current theme selection, and provides a clear toggle control for switching between light and dark modes."
+        }
+      ]
+    }
+  ]
+}

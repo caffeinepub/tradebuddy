@@ -1,0 +1,70 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-22T09:36:28.553Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 3,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-16",
+        "summary": "Verify the Welcome screen is correctly set as the initial screen when the app loads, ensuring it appears before the Home Dashboard and that the Continue button successfully navigates to the Home Dashboard.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/screens/Welcome.tsx",
+          "frontend/src/components/nav/BottomNav.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Ensure all existing screens (Home Dashboard, Learning, Trading, Demo Trading, Alerts, Live Chart Practice, Profile/Settings) are functioning correctly with their mock data and interactive features.",
+        "status": "missing",
+        "plannedFiles": [
+          "frontend/src/screens/HomeDashboard.tsx",
+          "frontend/src/screens/Learning.tsx",
+          "frontend/src/screens/Trading.tsx",
+          "frontend/src/screens/DemoTrading.tsx",
+          "frontend/src/screens/Alerts.tsx",
+          "frontend/src/screens/LiveChartPractice.tsx",
+          "frontend/src/screens/ProfileSettings.tsx"
+        ],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-18",
+        "summary": "Verify that the app theme (light/dark mode) is working correctly with the blue/green/white color palette and consistent styling across all screens.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/state/settingsStore.ts",
+          "frontend/src/screens/ProfileSettings.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/state/settingsStore.ts"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/App.tsx",
+    "frontend/src/state/settingsStore.ts",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

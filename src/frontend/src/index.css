@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.75rem;
+        /* Blue/Green/White palette for trust, growth, clarity */
+        --background: 0.99 0.005 220;
+        --foreground: 0.15 0.02 240;
+        --card: 1 0 0;
+        --card-foreground: 0.15 0.02 240;
+        --popover: 1 0 0;
+        --popover-foreground: 0.15 0.02 240;
+        /* Primary: Trust Blue */
+        --primary: 0.55 0.18 240;
+        --primary-foreground: 0.99 0 0;
+        /* Secondary: Growth Green */
+        --secondary: 0.65 0.15 150;
+        --secondary-foreground: 0.99 0 0;
+        --muted: 0.96 0.01 220;
+        --muted-foreground: 0.50 0.02 240;
+        --accent: 0.94 0.02 220;
+        --accent-foreground: 0.15 0.02 240;
+        /* Success: Green */
+        --success: 0.65 0.15 150;
+        --success-foreground: 0.99 0 0;
+        /* Warning: Amber */
+        --warning: 0.75 0.15 60;
+        --warning-foreground: 0.15 0.02 240;
+        /* Destructive: Red */
+        --destructive: 0.60 0.22 20;
+        --destructive-foreground: 0.99 0 0;
+        --border: 0.90 0.01 220;
+        --input: 0.90 0.01 220;
+        --ring: 0.55 0.18 240;
+        --chart-1: 0.55 0.18 240;
+        --chart-2: 0.65 0.15 150;
+        --chart-3: 0.75 0.15 60;
+        --chart-4: 0.60 0.22 20;
+        --chart-5: 0.70 0.12 280;
+    }
+
+    .dark {
+        --background: 0.12 0.02 240;
+        --foreground: 0.96 0.01 220;
+        --card: 0.16 0.02 240;
+        --card-foreground: 0.96 0.01 220;
+        --popover: 0.18 0.02 240;
+        --popover-foreground: 0.96 0.01 220;
+        /* Primary: Lighter Blue for dark mode */
+        --primary: 0.65 0.18 240;
+        --primary-foreground: 0.12 0.02 240;
+        /* Secondary: Lighter Green for dark mode */
+        --secondary: 0.70 0.15 150;
+        --secondary-foreground: 0.12 0.02 240;
+        --muted: 0.20 0.02 240;
+        --muted-foreground: 0.65 0.02 220;
+        --accent: 0.24 0.02 240;
+        --accent-foreground: 0.96 0.01 220;
+        --success: 0.70 0.15 150;
+        --success-foreground: 0.12 0.02 240;
+        --warning: 0.75 0.15 60;
+        --warning-foreground: 0.12 0.02 240;
+        --destructive: 0.65 0.22 20;
+        --destructive-foreground: 0.96 0.01 220;
+        --border: 0.24 0.02 240;
+        --input: 0.24 0.02 240;
+        --ring: 0.65 0.18 240;
+        --chart-1: 0.65 0.18 240;
+        --chart-2: 0.70 0.15 150;
+        --chart-3: 0.75 0.15 60;
+        --chart-4: 0.65 0.22 20;
+        --chart-5: 0.75 0.12 280;
+    }
+
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+}
+
+@layer utilities {
+    .text-success {
+        color: oklch(var(--success));
+    }
+    .text-warning {
+        color: oklch(var(--warning));
+    }
+    .bg-success {
+        background-color: oklch(var(--success));
+    }
+    .bg-warning {
+        background-color: oklch(var(--warning));
+    }
+    .border-success {
+        border-color: oklch(var(--success));
+    }
+}
+
+/* Title entrance animation for Home Dashboard */
+@keyframes title-entrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-title-entrance {
+    animation: title-entrance 0.6s ease-out forwards;
+}
+
+/* Welcome page animations - combined slide-in + fade-in + glow */
+@keyframes welcome-slide-fade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes welcome-glow {
+    0%, 60% {
+        text-shadow: none;
+    }
+    100% {
+        text-shadow: 
+            0 0 20px oklch(var(--primary) / 0.3),
+            0 0 40px oklch(var(--primary) / 0.2),
+            0 0 60px oklch(var(--primary) / 0.1);
+    }
+}
+
+.welcome-title {
+    animation: 
+        welcome-slide-fade 1.2s ease-out forwards,
+        welcome-glow 1.2s ease-out forwards;
+}
+
+@keyframes fade-in-delayed {
+    0%, 40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-delayed-more {
+    0%, 60% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in-delayed {
+    animation: fade-in-delayed 1.4s ease-out forwards;
+}
+
+.animate-fade-in-delayed-more {
+    animation: fade-in-delayed-more 1.6s ease-out forwards;
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .animate-title-entrance,
+    .welcome-title,
+    .animate-fade-in-delayed,
+    .animate-fade-in-delayed-more {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        text-shadow: none;
+    }
+}

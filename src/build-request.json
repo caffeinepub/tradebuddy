@@ -1,0 +1,84 @@
+{
+  "kind": "build_request",
+  "title": "Rebuild and deploy existing TradeBuddy app",
+  "projectName": "TradeBuddy",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-16",
+      "text": "Verify the Welcome screen is correctly set as the initial screen when the app loads, ensuring it appears before the Home Dashboard and that the Continue button successfully navigates to the Home Dashboard.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "Please build"
+        ]
+      },
+      "acceptanceCriteria": [
+        "When the app loads, the Welcome screen is displayed first",
+        "The Continue button on the Welcome screen navigates to the Home Dashboard",
+        "Bottom navigation is hidden on the Welcome screen",
+        "Bottom navigation appears on all other main screens (Home, Learn, Trade, Practice, Alerts, Live, Profile)"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Ensure all existing screens (Home Dashboard, Learning, Trading, Demo Trading, Alerts, Live Chart Practice, Profile/Settings) are functioning correctly with their mock data and interactive features.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "Please build"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home Dashboard displays market overview, trending stocks, indices, and watchlist",
+        "Learning screen shows categorized lessons and video tutorials",
+        "Trading screen renders stock selector, chart, and indicators",
+        "Demo Trading page manages virtual positions and trade history",
+        "Alerts screen allows creating, toggling, and deleting price alerts",
+        "Live Chart Practice simulates price movement with playback controls",
+        "Profile/Settings screen allows theme toggle and risk level selection"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "text": "Verify that the app theme (light/dark mode) is working correctly with the blue/green/white color palette and consistent styling across all screens.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent"
+        ],
+        "quotes": [
+          "Please build"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Light mode uses the defined blue/green/white palette",
+        "Dark mode applies appropriate color adjustments",
+        "Theme toggle in Profile/Settings persists across sessions",
+        "All screens respect the selected theme consistently"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify the backend/main.mo file as it is intentionally empty",
+    "Preserve all existing mock data and state management logic",
+    "Maintain the single-actor backend architecture",
+    "Keep immutable frontend paths unchanged (useInternetIdentity, useActor, main.tsx, ui components)"
+  ],
+  "nonGoals": [
+    "Adding real market data or external API integrations",
+    "Implementing actual trading functionality or real money transactions",
+    "Adding new screens or features beyond what already exists",
+    "Modifying the technology stack or framework choices"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
