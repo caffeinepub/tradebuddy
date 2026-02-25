@@ -1,0 +1,40 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add App Market pricing configuration for live publishing",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Add a pricing configuration screen or modal that allows the app owner to set a price for their app before publishing it live to the App Market",
+      "acceptanceCriteria": [
+        "A pricing configuration UI is accessible when initiating a 'Go Live' / publish flow",
+        "The owner can enter or select a price (including a free option) from predefined affordable tiers",
+        "The selected price is displayed in a confirmation step before publishing",
+        "Price input validates for non-negative numeric values",
+        "The UI is consistent with the existing TradeBuddy design system (dark/light mode support)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add React Query hooks for fetching and setting the app price using the backend's getPrice() and setPrice(newPrice) methods. Include useGetAppPrice query hook and useSetAppPrice mutation hook with proper error handling and query invalidation."
+        },
+        {
+          "path": "frontend/src/components/pricing/PricingConfigModal.tsx",
+          "operation": "create",
+          "description": "Create a pricing configuration modal component using shadcn/ui Dialog that displays predefined pricing tiers (Free, $0.99, $1.99, $4.99), allows custom price input with validation for non-negative numeric values, shows the selected price prominently, and includes a confirmation step before submitting. The component must use the authorization component to verify admin permissions before allowing price configuration. Verify the component's usage instructions before implementing. Support both light and dark themes consistent with the TradeBuddy design system."
+        },
+        {
+          "path": "frontend/src/screens/ProfileSettings.tsx",
+          "operation": "modify",
+          "description": "Add a 'Go Live to App Market' section with a button that opens the PricingConfigModal. Display the current app price if one is set. The section should only be visible to admin users by checking authorization state using the authorization component. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and wire the PricingConfigModal component so it can be triggered from the ProfileSettings screen. Ensure the modal state is properly managed and the component is conditionally rendered."
+        }
+      ]
+    }
+  ]
+}

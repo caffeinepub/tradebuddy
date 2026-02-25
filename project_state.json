@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "New project",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-add-a-pricing-configuration-screen-or-modal-that-allows-the-app-owner-to-set-a-price-for-their-app-before-publishing-it-live-to-the-app-market-the-price-input-should-support-common-currency-formats-e-g-usd-include-a-clearly-labeled-affordable-pricing-tier-suggestion-e-g-free-0-99-1-99-4-99-and-display-the-selected-price-prominently-before-confirming-the-go-live-action",
+      "title": "Add a pricing configuration screen or modal that allows the app owner to set a price for their app before publishing it live to the App Market. The price input should support common currency formats (e.g., USD), include a clearly labeled affordable pricing tier suggestion (e.g., free, $0.99, $1.99, $4.99), and display the selected price prominently before confirming the go-live action.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Ability to set a price for the app when publishing to the App Market",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Store the configured app price in the backend so it persists across sessions. Expose a method to set the price and a method to retrieve the current price.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "TradeBuddy",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

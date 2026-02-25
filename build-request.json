@@ -1,0 +1,60 @@
+{
+  "kind": "build_request",
+  "title": "Add App Market pricing configuration for live publishing",
+  "projectName": "TradeBuddy",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Add a pricing configuration screen or modal that allows the app owner to set a price for their app before publishing it live to the App Market. The price input should support common currency formats (e.g., USD), include a clearly labeled affordable pricing tier suggestion (e.g., free, $0.99, $1.99, $4.99), and display the selected price prominently before confirming the go-live action.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "I can set a price when the user go to live and the price is affordable"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A pricing configuration UI is accessible when initiating a 'Go Live' / publish flow",
+        "The owner can enter or select a price (including a free option) from predefined affordable tiers",
+        "The selected price is displayed in a confirmation step before publishing",
+        "Price input validates for non-negative numeric values",
+        "The UI is consistent with the existing TradeBuddy design system (dark/light mode support)"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Store the configured app price in the backend so it persists across sessions. Expose a method to set the price and a method to retrieve the current price.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-20"
+        ],
+        "quotes": [
+          "I can set a price when the user go to live and the price is affordable"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend actor exposes a `setAppPrice` method accepting a numeric (or text) price value",
+        "Backend actor exposes a `getAppPrice` method returning the currently stored price",
+        "Price persists across canister upgrades via stable storage"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui",
+    "All Motoko logic must remain in backend/main.mo as a single actor"
+  ],
+  "nonGoals": [
+    "Actual App Market integration or publishing pipeline (not yet available)",
+    "Payment processing or transaction handling",
+    "Multi-currency support",
+    "Subscription or recurring pricing models"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

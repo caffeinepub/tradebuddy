@@ -1,0 +1,26 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-a-pricing-configuration-screen-or-modal-that-allows-the-app-owner-to-set-a-price-for-their-app-before-publishing-it-live-to-the-app-market-the-price-input-should-support-common-currency-formats-e-g-usd-include-a-clearly-labeled-affordable-pricing-tier-suggestion-e-g-free-0-99-1-99-4-99-and-display-the-selected-price-prominently-before-confirming-the-go-live-action",
+      "featureTitle": "Add a pricing configuration screen or modal that allows the app owner to set a price for their app before publishing it live to the App Market. The price input should support common currency formats (e.g., USD), include a clearly labeled affordable pricing tier suggestion (e.g., free, $0.99, $1.99, $4.99), and display the selected price prominently before confirming the go-live action.",
+      "files": [
+        "frontend/src/components/pricing/PricingConfigModal.tsx",
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/screens/ProfileSettings.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
